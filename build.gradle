@@ -1,0 +1,59 @@
+plugins {
+	id 'maven-publish'
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: "maven-publish"
+
+group = 'ru.pva'
+version = '0.1.0'
+
+description = """"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	def lombok = 'org.projectlombok:lombok:1.18.4'
+	compileOnly lombok
+	annotationProcessor lombok
+	compile(
+			'com.puppycrawl.tools:checkstyle:6.19',
+			'org.apache.commons:commons-lang3:3.4',
+			'ch.qos.logback:logback-classic:1.2.3'
+	)
+
+	testCompile(
+			'org.codehaus.groovy:groovy-all:2.4.11',
+			'org.spockframework:spock-core:1.1-groovy-2.4',
+			'de.jodamob.kotlin:kotlin-runner-spock:0.3.1',
+			'org.objenesis:objenesis:2.6',
+			'net.bytebuddy:byte-buddy:1.7.9'
+	)
+}
+
+test {
+	useJUnit()
+	testLogging {
+		showStandardStreams = true
+	}
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			artifactId = 'codestyles'
+			from components.java
+		}
+	}
+	repositories {
+		mavenLocal()
+	}
+}
