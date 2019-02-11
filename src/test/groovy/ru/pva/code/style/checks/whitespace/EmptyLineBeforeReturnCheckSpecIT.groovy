@@ -8,7 +8,7 @@ class EmptyLineBeforeReturnCheckSpecIT extends ErrorAuditEventSpecificationIT {
 
 	private static final String CHECKSTYLE_CONFIGURATION_FILE = "src/test/resources/returns/return_check.xml"
 	private static final String ERROR_MESSAGE = "Empty string must be before return"
-	private static final String MODULE_NAME = "EmptyLineBeforeReturnCheck"
+	private static final String MODULE_NAME = "ru.pva.code.style.checks.whitespace.EmptyLineBeforeReturnCheck"
 
 	def "not logging error when empty line not required"() {
 		when:

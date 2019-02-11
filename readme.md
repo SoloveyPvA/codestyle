@@ -8,8 +8,12 @@ Modules:
 	* parent module: `TreeWalker`.
 
 ##Usage
-* Required Checkstyle version 6.19 (JDK 7)
-* Add the required module to your Checkstyle configuration (`xml`), for example, <br>
+###Requirements
+* install and init Gradle 4+ for this project (or use gradlew)
+* required Checkstyle version 6.19 (JDK 7)
+* install and configure lombok
+* build project and install artifact to local repository
+* add a required module to your Checkstyle configuration (`xml`), for example, <br>
 	* `<module name="EmptyLineBeforeReturnCheck"/>`;<br>
 	* with enable auto inserting before return:
 	```
@@ -29,7 +33,7 @@ Modules:
 		<dependencies>
 			<dependency>
 				<groupId>ru.pva</groupId>
-				<artifactId>ufs-errors-codestyles</artifactId>
+				<artifactId>codestyles</artifactId>
 				<version>0.1.0</version>
 			</dependency>
 		</dependencies>

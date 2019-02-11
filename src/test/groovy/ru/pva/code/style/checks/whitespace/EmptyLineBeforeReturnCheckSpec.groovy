@@ -19,7 +19,7 @@ import static com.puppycrawl.tools.checkstyle.api.TokenTypes.*
 @OpenedPackages(["ru.pva.code.style.checks", "com.puppycrawl.tools.checkstyle"])
 class EmptyLineBeforeReturnCheckSpec extends Specification {
 
-	private static SOURCE_NAME = "EmptyLineBeforeReturnCheck"
+	private static SOURCE_NAME = "ru.pva.code.style.checks.whitespace.EmptyLineBeforeReturnCheck"
 
 	EmptyLineBeforeReturnCheck check
 
